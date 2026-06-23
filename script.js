@@ -5,10 +5,10 @@
 
 /* ─────────────────────────────────────────────
    CONTACT FORM (Formspree)
-   Replace YOUR_FORM_ID with Michael's Formspree ID
+   The endpoint is read directly from the form's own
+   action attribute (contact.html -> action="https://formspree.io/f/xgorezpy"),
+   so there is only ONE place to ever update it.
    ───────────────────────────────────────────── */
-const FORMSPREE_ID = 'YOUR_FORM_ID';
-
 function initContactForm() {
   const form = document.getElementById('appointment-form');
   if (!form) return;
@@ -18,10 +18,16 @@ function initContactForm() {
     const submitBtn = form.querySelector('.form-submit');
     const successMsg = document.getElementById('form-success');
 
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    // Use the form's own action URL as the single source of truth
+    const endpoint = form.getAttribute('action');
 
-    fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+    const originalLabel = submitBtn ? submitBtn.textContent : 'Send Request';
+    if (submitBtn) {
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+    }
+
+    fetch(endpoint, {
       method: 'POST',
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
@@ -31,14 +37,18 @@ function initContactForm() {
           form.style.display = 'none';
           if (successMsg) successMsg.classList.add('show');
         } else {
-          submitBtn.textContent = 'Send Request';
-          submitBtn.disabled = false;
+          if (submitBtn) {
+            submitBtn.textContent = originalLabel;
+            submitBtn.disabled = false;
+          }
           alert('Something went wrong. Please call us at 817-550-6038 or email michael@outdoorgrillsales.com');
         }
       })
       .catch(() => {
-        submitBtn.textContent = 'Send Request';
-        submitBtn.disabled = false;
+        if (submitBtn) {
+          submitBtn.textContent = originalLabel;
+          submitBtn.disabled = false;
+        }
         alert('Something went wrong. Please call us at 817-550-6038 or email michael@outdoorgrillsales.com');
       });
   });
