@@ -23,8 +23,14 @@
   <meta name="twitter:title" content="Shop Grills & Outdoor Kitchen Equipment | Weatherford, TX">
   <meta name="twitter:description" content="Shop 20+ premium grill brands in Weatherford, TX. Blaze, Lynx, Big Green Egg, Napoleon, and more. Gas, pellet, kamado, griddles, and outdoor heaters.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -43,7 +49,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -101,19 +107,19 @@
     <button class="filter-btn" data-filter="charcoal">Charcoal</button>
   </div>
 
-  <!-- BRAND GRID -->
-  <section style="padding:1.95rem 2.6rem 3.25rem;">
-    <div class="explore-brands-grid">
+  <!-- FRAME: BRAND GRID -->
+  <div class="frame-wrap">
+    <div class="explore-brands-grid reveal">
 
       <!-- ALFRESCO -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-alfresco.jpg" alt="Alfresco" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-alfresco.jpg" alt="Alfresco" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-alfresco.png" alt="Alfresco">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-alfresco.png" alt="Alfresco">
           <h3>Alfresco</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Luxury</span><span>USA Made</span>
@@ -129,12 +135,12 @@
       <!-- AMERICAN MADE GRILLS -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-amg.jpg" alt="American Made Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-amg.jpg" alt="American Made Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-americanmade.png" alt="American Made Grills">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-americanmade.png" alt="American Made Grills">
           <h3>American Made Grills</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>USA Made</span>
@@ -150,12 +156,12 @@
       <!-- AMERICAN OUTDOOR GRILLS -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-aog.jpg" alt="American Outdoor Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-aog.jpg" alt="American Outdoor Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-americanoutdoor.png" alt="American Outdoor Grills">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-americanoutdoor.png" alt="American Outdoor Grills">
           <h3>American Outdoor Grills</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>USA Made</span>
@@ -171,12 +177,12 @@
       <!-- ARTISAN -->
       <div class="explore-brand-card reveal" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-artisan.jpg" alt="Artisan Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-artisan.jpg" alt="Artisan Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-artisan.png" alt="Artisan">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-artisan.png" alt="Artisan">
           <h3>Artisan Grills</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Freestanding</span>
@@ -192,12 +198,12 @@
       <!-- BIG GREEN EGG -->
       <div class="explore-brand-card reveal" data-category="grills smokers pizza">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-bge.jpg" alt="Big Green Egg" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-bge.jpg" alt="Big Green Egg" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-biggreenegg.png" alt="Big Green Egg">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-biggreenegg.png" alt="Big Green Egg">
           <h3>Big Green Egg</h3>
           <div class="explore-brand-tags">
             <span>Ceramic</span><span>Kamado</span><span>Smoker</span><span>Pizza</span>
@@ -213,12 +219,12 @@
       <!-- BLAZE -->
       <div class="explore-brand-card reveal" data-category="grills griddles">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-blaze.jpg" alt="Blaze Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-blaze.jpg" alt="Blaze Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-blaze.png" alt="Blaze">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-blaze.png" alt="Blaze">
           <h3>Blaze Grills</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Kamado</span><span>Griddles</span>
@@ -234,11 +240,11 @@
       <!-- BLAZN GRILL WORKS -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="smokers">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-blazn.jpg" alt="Blazn Grill Works" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-blazn.jpg" alt="Blazn Grill Works" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-blazn.png" alt="Blazn Grill Works">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-blazn.png" alt="Blazn Grill Works">
           <h3>Blazn Grill Works</h3>
           <div class="explore-brand-tags">
             <span>Pellet</span><span>Smoker</span><span>USA Made</span><span>Competition</span>
@@ -253,12 +259,12 @@
       <!-- COYOTE -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-coyote.jpg" alt="Coyote Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-coyote.jpg" alt="Coyote Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-coyote.png" alt="Coyote">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-coyote.png" alt="Coyote">
           <h3>Coyote Grills</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Outdoor Kitchen</span>
@@ -274,12 +280,12 @@
       <!-- FIRE MAGIC -->
       <div class="explore-brand-card reveal" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-firemagic.jpg" alt="Fire Magic" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-firemagic.jpg" alt="Fire Magic" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-firemagic.png" alt="Fire Magic">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-firemagic.png" alt="Fire Magic">
           <h3>Fire Magic</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Charcoal</span><span>Built-In</span><span>Freestanding</span>
@@ -295,12 +301,12 @@
       <!-- GATEWAY DRUM SMOKERS -->
       <div class="explore-brand-card reveal" data-category="smokers">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-gateway.jpg" alt="Gateway Drum Smokers" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-gateway.jpg" alt="Gateway Drum Smokers" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-gateway.png" alt="Gateway Drum Smokers">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-gateway.png" alt="Gateway Drum Smokers">
           <h3>Gateway Drum Smokers</h3>
           <div class="explore-brand-tags">
             <span>Drum Smoker</span><span>30 Gallon</span><span>55 Gallon</span>
@@ -315,12 +321,12 @@
       <!-- GOZNEY -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="pizza">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-gozney.jpg" alt="Gozney Pizza Ovens" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-gozney.jpg" alt="Gozney Pizza Ovens" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-gozney.png" alt="Gozney">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-gozney.png" alt="Gozney">
           <h3>Gozney</h3>
           <div class="explore-brand-tags">
             <span>Pizza Ovens</span><span>Dome</span><span>Arc</span><span>Gas &amp; Wood</span>
@@ -335,11 +341,11 @@
       <!-- LE GRIDDLE -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="griddles grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-legriddle.jpg" alt="Le Griddle" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-legriddle.jpg" alt="Le Griddle" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-legriddle.png" alt="Le Griddle">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-legriddle.png" alt="Le Griddle">
           <h3>Le Griddle</h3>
           <div class="explore-brand-tags">
             <span>Griddle</span><span>Gas</span><span>Built-In</span><span>Freestanding</span><span>Teppanyaki</span>
@@ -355,12 +361,12 @@
       <!-- LYNX PRO -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-lynx-pro.jpg" alt="Lynx Professional" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-lynx-pro.jpg" alt="Lynx Professional" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-lynx.png" alt="Lynx">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-lynx.png" alt="Lynx">
           <h3>Lynx Professional</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Freestanding</span><span>USA Made</span>
@@ -376,12 +382,12 @@
       <!-- LYNX SEDONA -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-lynx-sedona.jpg" alt="Lynx Sedona" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-lynx-sedona.jpg" alt="Lynx Sedona" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-lynx.png" alt="Lynx Sedona">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-lynx.png" alt="Lynx Sedona">
           <h3>Lynx Sedona</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Freestanding</span>
@@ -397,12 +403,12 @@
       <!-- MEMPHIS -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="smokers grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-memphis.jpg" alt="Memphis Wood Fire Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-memphis.jpg" alt="Memphis Wood Fire Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-memphis.png" alt="Memphis">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-memphis.png" alt="Memphis">
           <h3>Memphis Wood Fire</h3>
           <div class="explore-brand-tags">
             <span>Pellet</span><span>Smoker</span><span>Built-In</span><span>Wi-Fi</span>
@@ -418,11 +424,11 @@
       <!-- MGRILLS -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="charcoal smokers">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-mgrills.jpg" alt="MGrills Charcoal" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-mgrills.jpg" alt="MGrills Charcoal" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-mgrills.png" alt="MGrills">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-mgrills.png" alt="MGrills">
           <h3>MGrills</h3>
           <div class="explore-brand-tags">
             <span>Charcoal</span><span>Smoker</span><span>Premium</span>
@@ -437,11 +443,11 @@
       <!-- MONT ALPI -->
       <div class="explore-brand-card reveal" data-category="grills pizza">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-mont-alpi.jpg" alt="Mont Alpi Outdoor Kitchens" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-mont-alpi.jpg" alt="Mont Alpi Outdoor Kitchens" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-mont-alpi.png" alt="Mont Alpi">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-mont-alpi.png" alt="Mont Alpi">
           <h3>Mont Alpi</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Outdoor Kitchen</span><span>Pizza</span><span>Modular</span>
@@ -457,12 +463,12 @@
       <!-- NAPOLEON -->
       <div class="explore-brand-card reveal" data-category="grills">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-napoleon.jpg" alt="Napoleon" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-napoleon.jpg" alt="Napoleon" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-napoleon.png" alt="Napoleon">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-napoleon.png" alt="Napoleon">
           <h3>Napoleon</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Charcoal</span><span>Built-In</span><span>Kettle</span>
@@ -478,12 +484,12 @@
       <!-- PRIMO -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="grills smokers pizza">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-primo.jpg" alt="Primo Ceramic Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-primo.jpg" alt="Primo Ceramic Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-primo.png" alt="Primo">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-primo.png" alt="Primo">
           <h3>Primo Ceramic</h3>
           <div class="explore-brand-tags">
             <span>Ceramic</span><span>Oval Kamado</span><span>USA Made</span>
@@ -499,11 +505,11 @@
       <!-- PIT BOSS NAVIGATOR -->
       <div class="explore-brand-card reveal" data-category="smokers">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-pitboss.jpg" alt="Pit Boss Navigator Series pellet grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-pitboss.jpg" alt="Pit Boss Navigator Series pellet grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-pitboss.png" alt="Pit Boss">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-pitboss.png" alt="Pit Boss">
           <h3>Pit Boss Navigator</h3>
           <div class="explore-brand-tags">
             <span>Pellet</span><span>Smoker</span><span>Wi-Fi</span><span>Freestanding</span>
@@ -519,12 +525,12 @@
       <div class="explore-brand-card reveal reveal-delay-1" data-category="grills">
         <div class="explore-brand-img-wrap">
           <a href="promotions.html#promo-rcs" class="promo-active-badge">Promo Active</a>
-          <img src="assets/brand-img-renaissance.jpg" alt="Renaissance Cooking Systems" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-renaissance.jpg" alt="Renaissance Cooking Systems" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-renaissance.png" alt="Renaissance">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-renaissance.png" alt="Renaissance">
           <h3>Renaissance Cooking</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span><span>Luxury</span>
@@ -540,11 +546,11 @@
       <!-- SUNTERRA -->
       <div class="explore-brand-card reveal" data-category="charcoal">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-sunterra.jpg" alt="Sunterra Charcoal Grills" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-sunterra.jpg" alt="Sunterra Charcoal Grills" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
         </div>
         <div class="explore-brand-body">
-          <img class="explore-body-logo" src="assets/brand-sunterra.png" alt="Sunterra">
+          <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-sunterra.png" alt="Sunterra">
           <h3>Sunterra</h3>
           <div class="explore-brand-tags">
             <span>Charcoal</span><span>Built-In</span><span>Freestanding</span>
@@ -560,12 +566,12 @@
       <div class="explore-brand-card reveal reveal-delay-2" data-category="grills">
         <div class="explore-brand-img-wrap">
           <a href="promotions.html#promo-trueflame" class="promo-active-badge">Promo Active</a>
-          <img src="assets/brand-img-trueflame.jpg" alt="True Flame" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-trueflame.jpg" alt="True Flame" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-trueflame.png" alt="True Flame">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-trueflame.png" alt="True Flame">
           <h3>True Flame</h3>
           <div class="explore-brand-tags">
             <span>Gas</span><span>Built-In</span>
@@ -581,12 +587,12 @@
       <!-- BROMIC -->
       <div class="explore-brand-card reveal" data-category="heaters">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-bromic.jpg" alt="Bromic Heating" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-bromic.jpg" alt="Bromic Heating" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-bromic.png" alt="Bromic">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-bromic.png" alt="Bromic">
           <h3>Bromic Heating</h3>
           <div class="explore-brand-tags">
             <span>Electric</span><span>Gas</span><span>Built-In</span><span>Freestanding</span>
@@ -602,12 +608,12 @@
       <!-- HEATSTRIP -->
       <div class="explore-brand-card reveal reveal-delay-2" data-category="heaters">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-heatstrip.jpg" alt="HeatStrip" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-heatstrip.jpg" alt="HeatStrip" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-heatstrip.png" alt="HeatStrip">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-heatstrip.png" alt="HeatStrip">
           <h3>HeatStrip</h3>
           <div class="explore-brand-tags">
             <span>Halogen Infrared</span><span>Ceiling Mount</span><span>Wall Mount</span>
@@ -624,12 +630,12 @@
       <!-- INFRATECH -->
       <div class="explore-brand-card reveal reveal-delay-1" data-category="heaters">
         <div class="explore-brand-img-wrap">
-          <img src="assets/brand-img-infratech.jpg" alt="Infratech" onerror="this.parentElement.classList.add('no-img')">
+          <img width="600" height="400" loading="lazy" src="assets/brand-img-infratech.jpg" alt="Infratech" onerror="this.parentElement.classList.add('no-img')">
           <div class="explore-brand-img-overlay"></div>
           
         </div>
         <div class="explore-brand-body">
-        <img class="explore-body-logo" src="assets/brand-infratech.png" alt="Infratech">
+        <img width="160" height="36" loading="lazy" class="explore-body-logo" src="assets/brand-infratech.png" alt="Infratech">
           <h3>Infratech</h3>
           <div class="explore-brand-tags">
             <span>Electric Infrared</span><span>USA Made</span><span>Elite Retailer</span>
@@ -644,10 +650,11 @@
       </div>
 
     </div>
-  </section>
+  </div>
 
-  <!-- BOTTOM CTA -->
-  <div class="cta-band">
+  <!-- FRAME: BOTTOM CTA -->
+  <div class="frame-wrap tight">
+    <div class="cta-band reveal">
     <div class="cta-band-content">
       <h2>Not Sure Where<br><span style="color:var(--ember);">to Start?</span></h2>
       <p>Michael will help you find the right brand and setup for your backyard. Honest advice, no pressure.</p>
@@ -657,6 +664,7 @@
       </div>
     </div>
   </div>
+</div>
 
 </div>
 
@@ -664,7 +672,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
@@ -718,7 +726,7 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

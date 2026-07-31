@@ -23,8 +23,14 @@
   <meta name="twitter:title" content="About Outdoor Grill Sales | Weatherford, TX">
   <meta name="twitter:description" content="Meet Michael and Sandee Densmore, the family behind Outdoor Grill Sales in Weatherford, TX. Serving Parker County with premium grills and service since 2017.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -43,7 +49,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -86,10 +92,10 @@
   </div>
 
   <!-- STORY SECTION -->
-  <section style="padding:3.25rem 2.6rem;">
+  <div class="frame-wrap">
     <div class="about-story reveal">
       <div class="about-story-img">
-        <img src="assets/michael-sandee.jpg" alt="Michael and Sandee Densmore, owners of Outdoor Grill Sales">
+        <img width="800" height="600" loading="lazy" src="assets/michael-sandee.jpg" alt="Michael and Sandee Densmore, owners of Outdoor Grill Sales">
         <div class="about-story-badge">Est. 2017 &nbsp;|&nbsp; Weatherford, TX</div>
       </div>
       <div class="about-story-content">
@@ -110,11 +116,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- STORE PHOTO – editorial split layout -->
-  <section style="padding:3.25rem 0 0; margin:0; width:100%;">
-    <div class="about-story about-story-storefront">
+  <div class="frame-wrap tight">
+    <div class="about-story about-story-storefront reveal">
       <div class="about-story-content" style="justify-content:center;">
         <div class="section-label">Our Home Base</div>
         <h2>Come See Us<br>In <span>Weatherford</span></h2>
@@ -136,17 +142,18 @@
         </div>
       </div>
       <div class="about-story-img">
-        <img src="assets/store-front.jpg" alt="Outdoor Grill Sales showroom in Weatherford, TX" style="object-position:center 20%;">
+        <img width="800" height="600" loading="lazy" src="assets/store-front.jpg" alt="Outdoor Grill Sales showroom in Weatherford, TX" style="object-position:center 20%;">
         <div class="about-story-badge" style="background:rgba(245,242,238,0.92); border-color:var(--border-warm);">
           <span style="color:var(--ember); font-family:'Bebas Neue',sans-serif; font-size:0.82rem; letter-spacing:0.14em;">&#9679; Now at 111 Sunray Ct</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- VALUES -->
-  <section style="padding:3.25rem 2.6rem;">
-    <div class="section-label reveal">What We Stand For</div>
+  <div class="frame-wrap tight">
+    <div class="frame reveal">
+    <div class="section-label">What We Stand For</div>
     <h2 class="section-title reveal reveal-delay-1">The Way We<br><span>Do Business</span></h2>
     <div class="about-values reveal reveal-delay-2" style="margin:0;">
       <div class="about-value">
@@ -165,10 +172,11 @@
         <p>We are constantly adding new brands and products because there is always something better coming along. If you do not see what you are looking for, ask us. We are probably already looking at it.</p>
       </div>
     </div>
-  </section>
+    </div>
+  </div>
 
   <!-- STATS BAND -->
-  <section style="padding:2.54rem 1.69rem; background:transparent; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="frame-wrap tight">
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:1px; background:rgba(255,255,255,0.78); border:1px solid var(--border-warm); border-top:3px solid var(--ember); box-shadow:0 2px 12px rgba(0,0,0,0.06); max-width:800px; margin:0 auto;">
       <div class="hero-stat reveal" style="text-align:center; padding:1.3rem;">
         <div class="hero-stat-num" data-count="8" data-suffix="+" data-duration="1400">8+</div>
@@ -187,11 +195,12 @@
         <div class="hero-stat-label">Google Reviews</div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- HOURS AND LOCATION -->
-  <section style="padding:3.25rem 2.6rem;">
-    <div class="section-label reveal">Find Us</div>
+  <div class="frame-wrap tight">
+    <div class="frame reveal">
+    <div class="section-label">Find Us</div>
     <h2 class="section-title reveal reveal-delay-1">Come Visit<br><span>the Showroom</span></h2>
     <div class="about-hours-grid reveal reveal-delay-2" style="border:1px solid var(--border); border-top:3px solid var(--ember); max-width:900px; overflow:hidden;">
       <div style="background:var(--charcoal-2); padding:1.62rem;">
@@ -225,7 +234,8 @@
         </div>
       </div>
     </div>
-  </section>
+    </div>
+  </div>
 
   <!-- CTA -->
   <div class="cta-band">
@@ -244,7 +254,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
@@ -298,7 +308,7 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

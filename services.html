@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>On-Site Grill Repair & Installation | Weatherford, TX</title>
+  <title>On-Site Grill Repair &amp; Installation | Weatherford, TX</title>
   <meta name="description" content="On-site grill repair in Weatherford, TX. We come to you for gas and pellet grills, including built-ins. Equipment removal, installation, and custom kitchens.">
   <link rel="canonical" href="https://outdoorgrillsales.com/services">
+
+  <!-- Fonts loaded here rather than via @import inside the CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Outdoor Grill Sales">
-  <meta property="og:title" content="On-Site Grill Repair & Installation | Weatherford, TX">
+  <meta property="og:title" content="On-Site Grill Repair &amp; Installation | Weatherford, TX">
   <meta property="og:description" content="On-site grill repair in Weatherford, TX. We come to you for gas and pellet grills, including built-ins. Equipment removal, installation, and custom kitchens.">
   <meta property="og:url" content="https://outdoorgrillsales.com/services">
   <meta property="og:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
@@ -20,11 +25,15 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="On-Site Grill Repair & Installation | Weatherford, TX">
+  <meta name="twitter:title" content="On-Site Grill Repair &amp; Installation | Weatherford, TX">
   <meta name="twitter:description" content="On-site grill repair in Weatherford, TX. We come to you for gas and pellet grills, including built-ins. Equipment removal, installation, and custom kitchens.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Page hero background is the LCP element on inner pages -->
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -43,7 +52,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -77,7 +86,7 @@
 
 <div class="page-top">
 
-  <!-- PAGE HERO -->
+  <!-- PAGE HERO (full-bleed, closes with the accent bar) -->
   <div class="page-hero">
     <div class="page-hero-content">
       <div class="section-label">What We Do</div>
@@ -90,140 +99,142 @@
     </div>
   </div>
 
-  <!-- GRILL REPAIR -->
-  <div class="service-block reveal">
-    <div class="service-block-img">
-      <img src="assets/grill-repair.jpg" alt="On-site grill repair service by Outdoor Grill Sales">
-    </div>
-    <div class="service-block-content">
-      <div class="section-label">Service 01 &nbsp;·&nbsp; On-Site &amp; Honest</div>
-      <h2>On-Site Grill<br><span>Repair</span></h2>
-      <p>
-        If your grill is built into an island, you cannot exactly unbolt it and haul it across town. So we come to you. Michael drives out to your home, diagnoses the problem in place, and fixes it right there in your outdoor kitchen.
-      </p>
-      <p>
-        We now offer repair service for gas grills and pellet grills alike. Igniter stopped clicking, burners heating unevenly, regulator giving out, controller acting up: tell us what it is doing and we will get you back to grilling. It does not matter where you bought it or who installed it.
-      </p>
-      <ul class="service-includes">
-        <li>Built-in grills serviced in place, no removal needed</li>
-        <li>Gas grill repair</li>
-        <li>Pellet grill repair</li>
-        <li>Igniter and burner replacement</li>
-        <li>Regulator and valve issues</li>
-        <li>Grate and flavorizer bar replacement</li>
-        <li>Lid and hinge repairs</li>
-        <li>Cleaning and performance tune-ups</li>
-      </ul>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
-        <a href="contact.html?interest=Grill+Repair" class="btn-primary">Request Repair Service</a>
-        <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+  <!-- FRAME: GRILL REPAIR -->
+  <div class="frame-wrap">
+    <div class="service-block reveal">
+      <div class="service-block-img">
+        <img src="assets/grill-repair.jpg" alt="On-site grill repair service by Outdoor Grill Sales" width="900" height="700" loading="lazy">
+      </div>
+      <div class="service-block-content">
+        <div class="section-label">Service 01 &nbsp;·&nbsp; On-Site &amp; Honest</div>
+        <h2>On-Site Grill<br><span>Repair</span></h2>
+        <p>
+          If your grill is built into an island, you cannot exactly unbolt it and haul it across town. So we come to you. Michael drives out to your home, diagnoses the problem in place, and fixes it right there in your outdoor kitchen.
+        </p>
+        <p>
+          We now offer repair service for gas grills and pellet grills alike. Igniter stopped clicking, burners heating unevenly, regulator giving out, controller acting up: tell us what it is doing and we will get you back to grilling. It does not matter where you bought it or who installed it.
+        </p>
+        <ul class="service-includes">
+          <li>Built-in grills serviced in place, no removal needed</li>
+          <li>Gas grill repair</li>
+          <li>Pellet grill repair</li>
+          <li>Igniter and burner replacement</li>
+          <li>Regulator and valve issues</li>
+          <li>Grate and flavorizer bar replacement</li>
+          <li>Lid and hinge repairs</li>
+          <li>Cleaning and performance tune-ups</li>
+        </ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
+          <a href="contact.html?interest=Grill+Repair" class="btn-primary">Request Repair Service</a>
+          <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- OUTDOOR KITCHEN EQUIPMENT REMOVAL AND INSTALLATION -->
-  <div class="service-block reverse reveal" id="install">
-    <div class="service-block-img">
-      <img src="assets/install-bg.jpg" alt="Outdoor kitchen equipment removal and installation by Outdoor Grill Sales">
-    </div>
-    <div class="service-block-content">
-      <div class="section-label">Service 02 &nbsp;·&nbsp; Out With the Old</div>
-      <h2>Equipment Removal<br><span>&amp; Installation</span></h2>
-      <p>
-        Do you have an older built-in grill or other equipment that is past its prime? Is it time to have it removed and replaced, but you do not know where to start? That is exactly what we do. We pull the old unit out, make sure the new one fits the opening, and set it in properly.
-      </p>
-      <p>
-        It does not matter who built your outdoor kitchen. If someone else put it in years ago and the equipment is failing, call us. We will come look at what you have, tell you honestly what fits, and handle the swap start to finish.
-      </p>
-      <p>
-        Starting from scratch instead? We still design and build complete custom outdoor kitchens, from a single built-in grill to the full setup.
-      </p>
-      <ul class="service-includes">
-        <li>Old built-in grill removal and haul-off</li>
-        <li>New built-in grill installation</li>
-        <li>Retrofit sizing for existing cutouts and openings</li>
-        <li>Side burner and power burner replacement</li>
-        <li>Griddle and pizza oven swaps</li>
-        <li>Access door, drawer, and component replacement</li>
-        <li>Full custom outdoor kitchen builds</li>
-        <li>Gas line hookup coordination</li>
-      </ul>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
-        <a href="contact.html?interest=Outdoor+Kitchen+Installation" class="btn-primary">Get a Free Estimate</a>
-        <a href="explore.html" class="btn-ghost">Browse Equipment</a>
+  <!-- FRAME: EQUIPMENT REMOVAL AND INSTALLATION -->
+  <div class="frame-wrap tight">
+    <div class="service-block reverse reveal" id="install">
+      <div class="service-block-img">
+        <img src="assets/install-bg.jpg" alt="Outdoor kitchen equipment removal and installation by Outdoor Grill Sales" width="900" height="700" loading="lazy">
+      </div>
+      <div class="service-block-content">
+        <div class="section-label">Service 02 &nbsp;·&nbsp; Out With the Old</div>
+        <h2>Equipment Removal<br><span>&amp; Installation</span></h2>
+        <p>
+          Do you have an older built-in grill or other equipment that is past its prime? Is it time to have it removed and replaced, but you do not know where to start? That is exactly what we do. We pull the old unit out, make sure the new one fits the opening, and set it in properly.
+        </p>
+        <p>
+          It does not matter who built your outdoor kitchen. If someone else put it in years ago and the equipment is failing, call us. We will come look at what you have, tell you honestly what fits, and handle the swap start to finish.
+        </p>
+        <p>
+          Starting from scratch instead? We still design and build complete custom outdoor kitchens, from a single built-in grill to the full setup.
+        </p>
+        <ul class="service-includes">
+          <li>Old built-in grill removal and haul-off</li>
+          <li>New built-in grill installation</li>
+          <li>Retrofit sizing for existing cutouts and openings</li>
+          <li>Side burner and power burner replacement</li>
+          <li>Griddle and pizza oven swaps</li>
+          <li>Access door, drawer, and component replacement</li>
+          <li>Full custom outdoor kitchen builds</li>
+          <li>Gas line hookup coordination</li>
+        </ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
+          <a href="contact.html?interest=Outdoor+Kitchen+Installation" class="btn-primary">Get a Free Estimate</a>
+          <a href="explore.html" class="btn-ghost">Browse Equipment</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- EQUIPMENT SUPPLY -->
-  <div class="service-block reveal" id="equipment">
-    <div class="service-block-img">
-      <img src="assets/kitchen-equipment.jpg" alt="Outdoor kitchen equipment and components available at Outdoor Grill Sales">
-    </div>
-    <div class="service-block-content">
-      <div class="section-label">Service 03 &nbsp;·&nbsp; However You Build It</div>
-      <h2>All the Equipment<br><span>You Need</span></h2>
-      <p>
-        We sell every piece of equipment that goes into an outdoor kitchen, and you do not have to hire us to install it. Whether we are doing the installation or your own contractor is handling the build, you can source the whole package right here.
-      </p>
-      <p>
-        Working with a builder, a landscaper, or a pool contractor? Send them to us. Michael will help spec the equipment so everything fits the plan the first time, at dealer pricing on brands they will not find at a big box store.
-      </p>
-      <ul class="service-includes">
-        <li>Built-in and freestanding grills</li>
-        <li>Side burners and power burners</li>
-        <li>Refrigerators, ice makers, and beverage centers</li>
-        <li>Access doors, drawers, and storage components</li>
-        <li>Pizza ovens and griddles</li>
-        <li>Outdoor heaters</li>
-        <li>Available to homeowners and contractors alike</li>
-      </ul>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
-        <a href="explore.html" class="btn-primary">Browse the Lineup</a>
-        <a href="contact.html?interest=Outdoor+Kitchen+Equipment" class="btn-ghost">Ask About Pricing</a>
+  <!-- FRAME: EQUIPMENT SUPPLY -->
+  <div class="frame-wrap tight">
+    <div class="service-block reveal" id="equipment">
+      <div class="service-block-img">
+        <img src="assets/kitchen-equipment.jpg" alt="Outdoor kitchen equipment and components available at Outdoor Grill Sales" width="900" height="700" loading="lazy">
+      </div>
+      <div class="service-block-content">
+        <div class="section-label">Service 03 &nbsp;·&nbsp; However You Build It</div>
+        <h2>All the Equipment<br><span>You Need</span></h2>
+        <p>
+          We sell every piece of equipment that goes into an outdoor kitchen, and you do not have to hire us to install it. Whether we are doing the installation or your own contractor is handling the build, you can source the whole package right here.
+        </p>
+        <p>
+          Working with a builder, a landscaper, or a pool contractor? Send them to us. Michael will help spec the equipment so everything fits the plan the first time, at dealer pricing on brands they will not find at a big box store.
+        </p>
+        <ul class="service-includes">
+          <li>Built-in and freestanding grills</li>
+          <li>Side burners and power burners</li>
+          <li>Refrigerators, ice makers, and beverage centers</li>
+          <li>Access doors, drawers, and storage components</li>
+          <li>Pizza ovens and griddles</li>
+          <li>Outdoor heaters</li>
+          <li>Available to homeowners and contractors alike</li>
+        </ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
+          <a href="explore.html" class="btn-primary">Browse the Lineup</a>
+          <a href="contact.html?interest=Outdoor+Kitchen+Equipment" class="btn-ghost">Ask About Pricing</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- WHY CHOOSE US -->
-  <section style="padding:3.25rem 2.6rem; background:var(--charcoal-2);">
-    <div class="section-label reveal">Why Outdoor Grill Sales</div>
-    <h2 class="section-title reveal reveal-delay-1">Service You<br><span>Can Count On</span></h2>
-    <div style="height:2.5rem;"></div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1px; background:rgba(255,255,255,0.06); border:1px solid var(--border);">
-
-      <div class="about-value reveal">
-        <div class="about-value-num">01</div>
-        <h3>We Come to You</h3>
-        <p>Your built-in stays right where it is. Michael drives out, works on site, and does not send you to a call center.</p>
+  <!-- FRAME: WHY CHOOSE US -->
+  <div class="frame-wrap tight">
+    <div class="frame reveal">
+      <div class="section-label">Why Outdoor Grill Sales</div>
+      <h2 class="section-title" style="margin-bottom:1.8rem;">Service You<br><span>Can Count On</span></h2>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-num">01</div>
+          <h3>We Come to You</h3>
+          <p>Your built-in stays right where it is. Michael drives out, works on site, and does not send you to a call center.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-num">02</div>
+          <h3>Expert Knowledge</h3>
+          <p>Michael lives and breathes this stuff. He knows the brands, the parts, and the fixes from years of hands-on experience.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-num">03</div>
+          <h3>Honest Pricing</h3>
+          <p>No surprise charges. We tell you what it costs before any work begins. If we can save you money, we will tell you how.</p>
+        </div>
       </div>
-      <div class="about-value reveal reveal-delay-1">
-        <div class="about-value-num">02</div>
-        <h3>Expert Knowledge</h3>
-        <p>Michael lives and breathes this stuff. He knows the brands, the parts, and the fixes from years of hands-on experience.</p>
-      </div>
-      <div class="about-value reveal reveal-delay-2">
-        <div class="about-value-num">03</div>
-        <h3>Honest Pricing</h3>
-        <p>No surprise charges. We tell you what it costs before any work begins. If we can save you money, we will tell you how.</p>
-      </div>
-      <div class="about-value reveal reveal-delay-3">
-        <div class="about-value-num">04</div>
-        <h3>Family Business</h3>
-        <p>When you work with Outdoor Grill Sales, you are working directly with Michael and Sandee. Your grill matters to them personally.</p>
-      </div>
-
     </div>
-  </section>
+  </div>
 
-  <!-- SERVICE CTA -->
-  <div class="cta-band">
-    <div class="cta-band-content">
-      <h2>Let's Get You<br><span style="color:var(--ember);">Back to Grilling.</span></h2>
-      <p>Call Michael directly or send a quick request and he will get back to you the same day.</p>
-      <div class="cta-band-actions">
-        <a href="contact.html" class="btn-primary">Request Service</a>
-        <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+  <!-- FRAME: SERVICE CTA -->
+  <div class="frame-wrap">
+    <div class="cta-band reveal">
+      <div class="cta-band-content">
+        <h2>Let's Get You<br><span style="color:var(--ember-light);">Back to Grilling.</span></h2>
+        <p>Call Michael directly or send a quick request and he will get back to you the same day.</p>
+        <div class="cta-band-actions">
+          <a href="contact.html" class="btn-primary">Request Service</a>
+          <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+        </div>
       </div>
     </div>
   </div>
@@ -234,11 +245,11 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
-        <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
-        <a href="https://www.instagram.com/outdoorgrillsales1" target="_blank" rel="noopener" title="Instagram">in</a>
+        <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" aria-label="Outdoor Grill Sales on Facebook">f</a>
+        <a href="https://www.instagram.com/outdoorgrillsales1" target="_blank" rel="noopener" aria-label="Outdoor Grill Sales on Instagram">in</a>
       </div>
     </div>
     <div class="footer-col">
@@ -282,7 +293,7 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

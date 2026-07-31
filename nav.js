@@ -273,9 +273,8 @@ function initGalleryCarousel() {
   if (!total) return;
 
   const dotsWrap = document.getElementById('gallery-dots');
-  const caption = document.getElementById('gallery-caption');
   const carousel = stage.closest('.gallery-carousel');
-  const DELAY = 4500;
+  const DELAY = 4050;   // 10% faster than the previous 4500ms
 
   let current = 0;
   let autoTimer = null;
@@ -318,11 +317,6 @@ function initGalleryCarousel() {
     });
 
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
-
-    if (caption) {
-      const img = slides[current].querySelector('img');
-      caption.textContent = img ? (img.getAttribute('alt') || '') : '';
-    }
 
     start();
   }

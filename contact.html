@@ -23,9 +23,15 @@
   <meta name="twitter:title" content="Contact & Book a Showroom Visit | Weatherford, TX">
   <meta name="twitter:description" content="Contact Outdoor Grill Sales in Weatherford, TX. Book a showroom visit, request on-site grill repair, or get an outdoor kitchen estimate. Walk-ins Wed to Sat.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <link rel="stylesheet" href="style.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -44,7 +50,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -87,7 +93,7 @@
   </div>
 
   <!-- SHOWROOM HOURS -->
-  <section style="padding:2.6rem;" id="hours">
+  <div class="frame-wrap" id="hours">
     <div class="reveal" style="max-width:900px; margin:0 auto; background:#e9e0d1; border:1px solid var(--border-warm); border-top:3px solid var(--ember); box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:2.5rem 2.4rem;">
 
       <div class="section-label">Showroom Hours</div>
@@ -141,10 +147,10 @@
       <p style="max-width:760px; margin:1.6rem 0 0; font-family:'Crimson Pro',serif; font-size:0.98rem; color:var(--text-muted); line-height:1.7;">Just browsing or grabbing rubs and supplies? Walk in anytime during showroom hours, no appointment needed. Planning a full outdoor kitchen build or need a grill repair? Book a visit below or give us a call so we can set aside dedicated time for you.</p>
 
     </div>
-  </section>
+  </div>
 
   <!-- BOOKING SECTION -->
-  <section style="padding:2.6rem 0;" id="book-appointment">
+  <div class="frame-wrap tight" id="book-appointment">
 
     <!-- SCHEDULE CARD (PRIMARY, LIGHT, EMBER ACCENT, POPUP TRIGGER, TWO-COLUMN) -->
     <div class="ogs-schedule-card reveal">
@@ -164,7 +170,7 @@
         <ul class="ogs-schedule-bullets">
           <li>
             <div class="ogs-schedule-bullet-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div class="ogs-schedule-bullet-text">
               <div class="ogs-schedule-bullet-title">1 Hour Walk-Through</div>
@@ -173,7 +179,7 @@
           </li>
           <li>
             <div class="ogs-schedule-bullet-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="ogs-schedule-bullet-text">
               <div class="ogs-schedule-bullet-title">One-On-One With Michael</div>
@@ -182,7 +188,7 @@
           </li>
           <li>
             <div class="ogs-schedule-bullet-icon">
-              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <div class="ogs-schedule-bullet-text">
               <div class="ogs-schedule-bullet-title">See the Brands Up Close</div>
@@ -200,7 +206,7 @@
 
       <!-- RIGHT: Showroom image -->
       <div class="ogs-schedule-image">
-        <img src="assets/contact-showroom.jpg" alt="Outdoor Grill Sales showroom in Weatherford, TX">
+        <img width="800" height="600" loading="lazy" src="assets/contact-showroom.jpg" alt="Outdoor Grill Sales showroom in Weatherford, TX">
         <div class="ogs-schedule-image-badge">
           <span class="ogs-schedule-image-dot"></span>
           <span>111 Sunray Ct, Weatherford TX</span>
@@ -223,7 +229,7 @@
       </div>
     </div>
 
-  </section>
+  </div>
 
   <!-- DIVIDER -->
   <div class="booking-divider">
@@ -231,7 +237,7 @@
   </div>
 
   <!-- CONTACT GRID -->
-  <section style="padding:2.6rem;">
+  <div class="frame-wrap tight">
     <div class="contact-grid reveal">
 
       <!-- LEFT PANEL: INFO -->
@@ -245,7 +251,7 @@
 
         <div class="contact-detail-item">
           <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
           <div>
             <div class="contact-detail-label">Phone</div>
@@ -255,7 +261,7 @@
 
         <div class="contact-detail-item">
           <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
             <div class="contact-detail-label">Email</div>
@@ -265,7 +271,7 @@
 
         <div class="contact-detail-item">
           <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
             <div class="contact-detail-label">New Showroom</div>
@@ -402,10 +408,10 @@
 
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- MAP -->
-  <div style="padding:0 2.6rem 2.6rem;">
+  <div class="frame-wrap tight">
     <iframe
       class="contact-map"
       src="https://maps.google.com/maps?q=111+Sunray+Ct,+Weatherford,+TX+76087&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -421,7 +427,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
@@ -475,8 +481,8 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

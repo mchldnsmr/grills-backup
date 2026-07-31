@@ -23,8 +23,14 @@
   <meta name="twitter:title" content="Wood Pellets & Lump Charcoal | Weatherford, TX">
   <meta name="twitter:description" content="Texas hardwood grilling pellets and lump charcoal in Weatherford, TX. Shuping mesquite, post oak, and pecan, LumberJack blends, and Big Green Egg charcoal.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -43,7 +49,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -98,18 +104,18 @@
   </div>
 
   <!-- PRODUCT GRID -->
-  <section style="padding:1.95rem 2.6rem 3.25rem;">
+  <div class="frame-wrap">
 
     <div class="filter-section">
     <div class="section-label reveal" style="margin-bottom:0.5rem;">Texas Hardwood</div>
     <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:2rem;">Shuping<br><span>Grilling Pellets</span></h2>
 
-    <div class="explore-brands-grid">
+    <div class="explore-brands-grid pellets-grid">
 
       <!-- SHUPING TEXAS BEEF MIX -->
       <div class="explore-brand-card explore-product-card reveal" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-texas-beef-mix.jpg" alt="Shuping Texas Beef Mix grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-texas-beef-mix.jpg" alt="Shuping Texas Beef Mix grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Texas Beef Mix Pellets</h3>
@@ -126,7 +132,7 @@
       <!-- SHUPING PECAN / MESQUITE -->
       <div class="explore-brand-card explore-product-card reveal reveal-delay-1" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-pecan-mesquite.jpg" alt="Shuping Pecan Mesquite grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-pecan-mesquite.jpg" alt="Shuping Pecan Mesquite grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Pecan / Mesquite Pellets</h3>
@@ -143,7 +149,7 @@
       <!-- SHUPING TEXAS MESQUITE -->
       <div class="explore-brand-card explore-product-card reveal reveal-delay-2" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-mesquite.jpg" alt="Shuping Texas Mesquite grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-mesquite.jpg" alt="Shuping Texas Mesquite grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Texas Mesquite Pellets</h3>
@@ -160,7 +166,7 @@
       <!-- SHUPING TEXAS POST OAK -->
       <div class="explore-brand-card explore-product-card reveal" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-post-oak.jpg" alt="Shuping Texas Post Oak grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-post-oak.jpg" alt="Shuping Texas Post Oak grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Texas Post Oak Pellets</h3>
@@ -179,17 +185,15 @@
     </div>
 
     <div class="filter-section">
-    <div style="height:3.25rem;"></div>
-
     <div class="section-label reveal" style="margin-bottom:0.5rem;">Competition Grade</div>
     <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:2rem;">LumberJack<br><span>Grilling Pellets</span></h2>
 
-    <div class="explore-brands-grid">
+    <div class="explore-brands-grid pellets-grid">
 
       <!-- LUMBERJACK COMPETITION BLEND -->
       <div class="explore-brand-card explore-product-card reveal" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-lumberjack-competition-blend.jpg" alt="LumberJack Competition Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-lumberjack-competition-blend.jpg" alt="LumberJack Competition Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Competition Blend Pellets</h3>
@@ -206,7 +210,7 @@
       <!-- LUMBERJACK 100% OAK -->
       <div class="explore-brand-card explore-product-card reveal reveal-delay-1" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-lumberjack-oak.jpg" alt="LumberJack 100% Oak grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-lumberjack-oak.jpg" alt="LumberJack 100% Oak grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>100% Oak Pellets</h3>
@@ -223,7 +227,7 @@
       <!-- LUMBERJACK PECAN BLEND -->
       <div class="explore-brand-card explore-product-card reveal reveal-delay-2" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-lumberjack-pecan-blend.jpg" alt="LumberJack Pecan Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-lumberjack-pecan-blend.jpg" alt="LumberJack Pecan Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Pecan Blend Pellets</h3>
@@ -240,7 +244,7 @@
       <!-- LUMBERJACK MESQUITE BLEND -->
       <div class="explore-brand-card explore-product-card reveal" data-category="pellets">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/pellet-lumberjack-mesquite-blend.jpg" alt="LumberJack Mesquite Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/pellet-lumberjack-mesquite-blend.jpg" alt="LumberJack Mesquite Blend grilling pellets" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Mesquite Blend Pellets</h3>
@@ -259,17 +263,15 @@
     </div>
 
     <div class="filter-section">
-    <div style="height:3.25rem;"></div>
-
     <div class="section-label reveal" style="margin-bottom:0.5rem;">Live Fire</div>
     <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:2rem;">Lump<br><span>Charcoal</span></h2>
 
-    <div class="explore-brands-grid">
+    <div class="explore-brands-grid pellets-grid-solo">
 
       <!-- BIG GREEN EGG LUMP CHARCOAL -->
       <div class="explore-brand-card explore-product-card reveal" data-category="charcoal">
         <div class="explore-brand-img-wrap" style="background:#fff; padding:1rem;">
-          <img src="assets/charcoal-bge-oak-hickory.jpg" alt="Big Green Egg premium lump charcoal, oak and hickory" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
+          <img width="800" height="600" loading="lazy" src="assets/charcoal-bge-oak-hickory.jpg" alt="Big Green Egg premium lump charcoal, oak and hickory" style="object-fit:contain !important;" onerror="this.parentElement.classList.add('no-img')">
         </div>
         <div class="explore-brand-body">
           <h3>Big Green Egg Lump Charcoal</h3>
@@ -285,7 +287,7 @@
 
     </div>
     </div>
-  </section>
+  </div>
 
   <!-- BOTTOM CTA -->
   <div class="cta-band">
@@ -305,7 +307,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
@@ -359,7 +361,7 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

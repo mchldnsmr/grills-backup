@@ -24,8 +24,14 @@
   <meta name="twitter:title" content="Terms of Service | Outdoor Grill Sales">
   <meta name="twitter:description" content="Terms of service for Outdoor Grill Sales in Weatherford, Texas.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 </head>
 <body>
 
@@ -44,7 +50,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -88,7 +94,7 @@
   </div>
 
   <!-- TERMS CONTENT -->
-  <section style="padding:2.6rem;">
+  <div class="frame-wrap">
     <div class="privacy-card reveal">
 
       <div class="privacy-meta">
@@ -229,7 +235,7 @@
       </div>
 
     </div>
-  </section>
+  </div>
 
 </div>
 
@@ -237,7 +243,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
@@ -291,7 +297,7 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

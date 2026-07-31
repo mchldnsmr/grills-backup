@@ -57,7 +57,7 @@
   /* Frame geometry. One place to tune the whole rhythm. */
   --frame-radius: 12px;
   --card-radius:  8px;
-  --gutter:       5rem;
+  --gutter:       6rem;
   --gutter-sm:    1.1rem;
 }
 
@@ -113,12 +113,12 @@ ul { list-style: none; }
    marquee, nav, and footer.
    ───────────────────────────────────────────── */
 .frame-wrap {
-  padding: 3.2rem var(--gutter);
+  padding: 3.8rem var(--gutter);
 }
 .frame-wrap.tight { padding-top: 0; }
 
 .frame {
-  max-width: 1440px;
+  max-width: 1300px;
   margin: 0 auto;
   background: var(--frame);
   border: 1px solid var(--frame-line);
@@ -128,6 +128,66 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .frame.flush { padding: 0; }
+
+/* Card-like blocks that are already their own visual card (service blocks,
+   the about story, the contact grid, promo cards, legal cards) can sit
+   DIRECTLY inside a .frame-wrap. They pick up the same width cap, centering,
+   and float shadow as a .frame without being double-boxed inside one. */
+.frame-wrap > .service-block,
+.frame-wrap > .about-story,
+.frame-wrap > .contact-grid,
+.frame-wrap > .privacy-card,
+.frame-wrap > .promo-card,
+.frame-wrap > .promo-count-strip,
+.frame-wrap > .ogs-schedule-card,
+.frame-wrap > .ogs-call-card,
+.frame-wrap > .about-values,
+.frame-wrap > .about-hours-grid,
+.frame-wrap > .explore-brands-grid,
+.frame-wrap > .services-strip,
+.frame-wrap > .about-story-storefront,
+.frame-wrap > .contact-map,
+.frame-wrap > .seasonings-grid {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.10), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Blocks with no background of their own become full frames when they
+   sit directly inside a .frame-wrap: the pellets product groups, the
+   FAQ list, and the about-page stats band. */
+.frame-wrap > .filter-section,
+.frame-wrap > .faq-wrap {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--frame);
+  border: 1px solid var(--frame-line);
+  border-radius: var(--frame-radius);
+  padding: 2.6rem;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.10), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.frame-wrap > .filter-section + .filter-section { margin-top: 3.2rem; }
+.frame-wrap > .faq-wrap .faq-group:last-child { margin-bottom: 0; }
+
+/* CTA bands and the promotions help band on pages where they sit as a
+   direct child of .page-top rather than inside a .frame-wrap. They keep
+   their own max-width and auto side margins; this only adds the gutters. */
+.page-top > .cta-band,
+.page-top > .promo-help-band {
+  margin-top: 3.8rem;
+  margin-bottom: 3.8rem;
+  width: calc(100% - 2 * var(--gutter));
+}
+
+@media (max-width: 900px) {
+  .frame-wrap > .filter-section,
+  .frame-wrap > .faq-wrap { padding: 1.5rem 1.2rem; }
+  .frame-wrap > .filter-section + .filter-section { margin-top: 1.8rem; }
+  .page-top > .cta-band,
+  .page-top > .promo-help-band { margin-top: 1.8rem; margin-bottom: 1.8rem; }
+}
 
 /* ─────────────────────────────────────────────
    PROGRESS BAR
@@ -862,6 +922,7 @@ textarea:focus-visible {
   transition: transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.55s ease, filter 0.55s ease;
   border-radius: var(--card-radius);
   overflow: hidden;
+  border: 3px solid var(--ember);
   box-shadow: 0 10px 40px rgba(0,0,0,0.28);
   z-index: 1;
 }
@@ -873,6 +934,8 @@ textarea:focus-visible {
   opacity: 1;
   pointer-events: auto;
   filter: none;
+  border-color: var(--ember);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.30), 0 0 0 1px rgba(212,84,30,0.35);
   z-index: 3;
 }
 
@@ -888,16 +951,6 @@ textarea:focus-visible {
   opacity: 0.55;
   filter: brightness(0.7) saturate(0.75);
   z-index: 2;
-}
-
-.gallery-caption {
-  margin-top: 1.1rem;
-  font-family: 'Crimson Pro', serif;
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--text-muted);
-  text-align: center;
-  min-height: 1.6em;
 }
 
 .gallery-controls {
@@ -1093,7 +1146,7 @@ textarea:focus-visible {
    ───────────────────────────────────────────── */
 .cta-band {
   position: relative;
-  max-width: 1440px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 3.25rem 2.6rem;
   background-image: url('assets/cta-bg.jpg');
@@ -1116,12 +1169,14 @@ textarea:focus-visible {
 
 /* ─────────────────────────────────────────────
    PAGE HERO (inner pages)
-   Keeps hero-bg.jpg, lightened overlay per the standard, and closes
-   with a 4px accent bar so it never cuts straight into the page.
+   Shares hero-main.jpg with the homepage hero, so it is already cached
+   by the time a visitor reaches an inner page. Lightened overlay per the
+   standard, and closes with a 4px accent bar so it never cuts straight
+   into the page background.
    ───────────────────────────────────────────── */
 .page-hero {
   padding: 3.25rem var(--gutter) 2.25rem;
-  background-image: url('assets/hero-bg.jpg');
+  background-image: url('assets/hero-main.jpg');
   background-size: cover;
   background-position: center;
   border-bottom: 4px solid var(--ember);
@@ -1288,6 +1343,39 @@ textarea:focus-visible {
   border: 1px solid var(--frame-line);
   border-radius: var(--card-radius);
   overflow: hidden;
+}
+
+/* Pellets page: fixed 4-across so a 4-product group fills one clean row
+   instead of leaving an orphan card on a second row. The charcoal group
+   holds a single product, so it is centered at card width rather than
+   stretched across the whole frame. */
+/* A closing action row inside a frame, sitting under a product grid.
+   Keeps the "there is more than this" call to action attached to the
+   grid itself rather than stranded in a CTA band further down. */
+.shop-all-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--frame-line);
+}
+.shop-all-row p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+  max-width: 640px;
+}
+
+.pellets-grid { grid-template-columns: repeat(4, 1fr); }
+.pellets-grid-solo {
+  grid-template-columns: minmax(0, 340px);
+  justify-content: center;
 }
 
 .explore-brand-card {
@@ -1983,7 +2071,7 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
 
 .promo-help-band {
   position: relative;
-  max-width: 1440px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 4rem 2.6rem;
   background-image: url('assets/cta-bg.jpg');
@@ -2091,7 +2179,7 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
    RESPONSIVE – TABLET (max-width: 1100px)
    ───────────────────────────────────────────── */
 @media (max-width: 1100px) {
-  :root { --gutter: 2.6rem; }
+  :root { --gutter: 3rem; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .explore-brands-grid { grid-template-columns: repeat(2, 1fr); }
   .promo-card { grid-template-columns: 320px 1fr; }
@@ -2232,6 +2320,10 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
   .catalog-filter { padding: 1rem var(--gutter); top: 60px; gap: 0.5rem; }
 
   .explore-brands-grid { grid-template-columns: 1fr; }
+  .pellets-grid, .pellets-grid-solo { grid-template-columns: 1fr; }
+  .shop-all-row { flex-direction: column; align-items: stretch; text-align: center; gap: 1.1rem; }
+  .shop-all-row p { max-width: none; }
+  .shop-all-row .btn-primary { justify-content: center; }
   .explore-brand-img-wrap { height: 200px; }
   .explore-brand-body { padding: 1.4rem 1.4rem 1.8rem; }
 
