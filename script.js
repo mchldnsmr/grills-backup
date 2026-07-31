@@ -1,5 +1,5 @@
 /* ============================================================
-   OUTDOOR GRILL SALES — script.js
+   OUTDOOR GRILL SALES: script.js
    Page-specific interactions
    ============================================================ */
 
@@ -8,13 +8,62 @@
    The endpoint is read directly from the form's own
    action attribute (contact.html -> action="https://formspree.io/f/xgorezpy"),
    so there is only ONE place to ever update it.
+
+   Phone handling:
+   - Live-formats the phone field to (817) 555-1234 as the user types,
+     which makes a missing digit obvious.
+   - Blocks submission unless a full 10-digit number is entered, so
+     Michael never receives an incomplete phone number again.
    ───────────────────────────────────────────── */
 function initContactForm() {
   const form = document.getElementById('appointment-form');
   if (!form) return;
 
+  const phoneField = document.getElementById('field-phone');
+
+  // Live-format the phone field to (817) 555-1234 and cap at 10 digits.
+  if (phoneField) {
+    phoneField.addEventListener('input', function () {
+      let digits = phoneField.value.replace(/\D/g, '');
+      // If someone pastes a leading country code "1", drop it before formatting
+      if (digits.length === 11 && digits.charAt(0) === '1') {
+        digits = digits.slice(1);
+      }
+      digits = digits.slice(0, 10);
+
+      let formatted = digits;
+      if (digits.length > 6) {
+        formatted = '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+      } else if (digits.length > 3) {
+        formatted = '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+      } else if (digits.length > 0) {
+        formatted = '(' + digits;
+      }
+
+      phoneField.value = formatted;
+      // Clear any previous "please enter a full number" message once they edit
+      phoneField.setCustomValidity('');
+    });
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    // Require a complete 10-digit phone number before anything else runs.
+    if (phoneField) {
+      const digitCount = phoneField.value.replace(/\D/g, '').length;
+      const isComplete = digitCount === 10 ||
+        (digitCount === 11 && phoneField.value.replace(/\D/g, '').charAt(0) === '1');
+
+      if (!isComplete) {
+        phoneField.setCustomValidity('Please enter a full 10-digit phone number.');
+        phoneField.reportValidity();
+        phoneField.focus();
+        return;
+      }
+      phoneField.setCustomValidity('');
+    }
+
     const submitBtn = form.querySelector('.form-submit');
     const successMsg = document.getElementById('form-success');
 
@@ -56,20 +105,38 @@ function initContactForm() {
 
 /* ─────────────────────────────────────────────
    MULTI-CATEGORY FILTER
-   Works on both catalog.html and brands.html.
+   Used on explore.html (grills) and pellets.html.
    Cards use space-separated data-category or data-type values
    e.g. data-category="grills smokers pizza"
    The filter checks if the selected category appears
    anywhere in that space-separated list.
+
+   SECTION HEADINGS:
+   A page can group its cards under headings by wrapping each
+   group in <div class="filter-section"> ... </div>. After
+   filtering, any section left with zero visible cards is hidden
+   too, so you never get an orphaned heading with nothing under
+   it. Pages without .filter-section wrappers are unaffected.
    ───────────────────────────────────────────── */
 function initCatalogFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (!filterBtns.length) return;
 
-  // Catalog page uses .catalog-brand-card with data-category
-  // Brands page uses .brand-card with data-type
-  const cards = document.querySelectorAll('.catalog-brand-card, .brand-card, .explore-brand-card');
+  const CARD_SELECTOR = '.catalog-brand-card, .brand-card, .explore-brand-card';
+  const cards = document.querySelectorAll(CARD_SELECTOR);
   if (!cards.length) return;
+
+  // Hide any grouped section that has no visible cards left in it
+  function syncSectionHeadings() {
+    document.querySelectorAll('.filter-section').forEach(section => {
+      const sectionCards = section.querySelectorAll(CARD_SELECTOR);
+      let hasVisible = false;
+      sectionCards.forEach(card => {
+        if (card.style.display !== 'none') hasVisible = true;
+      });
+      section.style.display = hasVisible ? '' : 'none';
+    });
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -91,6 +158,9 @@ function initCatalogFilter() {
           card.style.display = 'none';
         }
       });
+
+      // Then hide any heading whose whole group just disappeared
+      syncSectionHeadings();
     });
   });
 }

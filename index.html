@@ -7,6 +7,12 @@
   <meta name="description" content="Premium grills, outdoor kitchens, and on-site grill repair in Weatherford, TX. Family-owned since 2017. We come to you for repairs and equipment replacement.">
   <link rel="canonical" href="https://outdoorgrillsales.com/">
 
+  <!-- Fonts. Loaded here rather than via @import inside style.css so the
+       browser can start fetching them without waiting to parse the CSS. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Outdoor Grill Sales">
@@ -23,8 +29,13 @@
   <meta name="twitter:title" content="Outdoor Grill Sales | Premium Grills | Weatherford, TX">
   <meta name="twitter:description" content="Premium grills, outdoor kitchens, and on-site grill repair in Weatherford, TX. Family-owned since 2017. We come to you for repairs and equipment replacement.">
   <meta name="twitter:image" content="https://outdoorgrillsales.com/assets/og-image.jpg">
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Hero image is the LCP element. Preloading it lets the browser start
+       the download before it has finished parsing the stylesheet. -->
+  <link rel="preload" as="image" href="assets/hero-main.jpg" fetchpriority="high">
 
   <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
@@ -111,7 +122,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/logo.png" alt="Outdoor Grill Sales" onerror="this.style.display='none'">
+    <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" onerror="this.style.display='none'">
   </a>
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -144,7 +155,7 @@
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (full-bleed, own image) -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -178,10 +189,9 @@
       </div>
     </div>
   </div>
-  <div class="hero-scroll">Scroll</div>
 </section>
 
-<!-- MARQUEE -->
+<!-- MARQUEE (the one band that stays full-bleed) -->
 <div class="marquee-strip">
   <div class="marquee-track">
     <div class="marquee-item"><span class="marquee-dot"></span>Gas Grills</div>
@@ -209,209 +219,257 @@
   </div>
 </div>
 
-<!-- THREE SERVICE PILLARS -->
-<section style="padding: 3rem 4rem;">
-  <div class="services-strip" style="margin:0;">
-    <div class="service-pillar reveal">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="12" cy="6" r="2"/></svg>
+<!-- FRAME: THREE SERVICE PILLARS -->
+<div class="frame-wrap">
+  <div class="frame reveal">
+    <div class="services-strip">
+      <div class="service-pillar">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="12" cy="6" r="2"/></svg>
+        </div>
+        <h3>Shop the Catalog</h3>
+        <p>Browse 18+ premium brands including Blaze, Lynx, Big Green Egg, Napoleon, and more. We sell every piece of equipment your outdoor kitchen needs, whether we are doing the installation or your own contractor is.</p>
+        <a href="explore.html">Explore Products <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
-      <h3>Shop the Catalog</h3>
-      <p>Browse 18+ premium brands including Blaze, Lynx, Big Green Egg, Napoleon, and more. We sell every piece of equipment your outdoor kitchen needs, whether we are doing the installation or your own contractor is.</p>
-      <a href="explore.html">Explore Products <svg viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-    </div>
-    <div class="service-pillar reveal reveal-delay-1">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      <div class="service-pillar">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>On-Site Grill Repair</h3>
+        <p>Built-in grill acting up? Michael comes to you. On-site repair for gas grills and pellet grills, including built-ins that cannot be pulled out and hauled off. It does not matter where you bought it.</p>
+        <a href="services.html">Learn More <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
-      <h3>On-Site Grill Repair</h3>
-      <p>Built-in grill acting up? Michael comes to you. On-site repair for gas grills and pellet grills, including built-ins that cannot be pulled out and hauled off. It does not matter where you bought it.</p>
-      <a href="services.html">Learn More <svg viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-    </div>
-    <div class="service-pillar reveal reveal-delay-2">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-      </div>
-      <h3>Removal &amp; Installation</h3>
-      <p>Old built-in past its prime? We pull the old equipment out and install the new, even if someone else built the kitchen. Full custom outdoor kitchen builds available too.</p>
-      <a href="services.html#install">Get an Estimate <svg viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- CURRENT DEALS CALLOUT -->
-<section style="padding: 0 4rem 3rem;">
-  <div class="deals-callout reveal" style="margin:0;">
-    <div class="deals-callout-content">
-      <div class="section-label">Manufacturer Promotions</div>
-      <h2 class="deals-callout-title">4 Active Promotions<br><span>Running Now</span></h2>
-      <p class="deals-callout-sub">Save on Lynx, Blaze, TrueFlame, and Renaissance. Lynx is paying up to $1,500 cash back, plus manufacturer-direct dealer pricing on grills, smokers, packages, and outdoor kitchen components, available through the showroom.</p>
-      <div class="deals-callout-brands">
-        <span class="deals-callout-brand-label">Brands on sale:</span>
-        <img src="assets/brand-lynx.png" alt="Lynx" class="deals-callout-brand-logo">
-        <img src="assets/brand-blaze.png" alt="Blaze" class="deals-callout-brand-logo">
-        <img src="assets/brand-trueflame.png" alt="TrueFlame" class="deals-callout-brand-logo">
-        <img src="assets/brand-renaissance.png" alt="Renaissance Cooking Systems" class="deals-callout-brand-logo">
+      <div class="service-pillar">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <h3>Removal &amp; Installation</h3>
+        <p>Old built-in past its prime? We pull the old equipment out and install the new, even if someone else built the kitchen. Full custom outdoor kitchen builds available too.</p>
+        <a href="services.html#install">Get an Estimate <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
-    <div class="deals-callout-actions">
-      <span class="deals-callout-count">4 Active</span>
-      <a href="promotions.html" class="btn-primary">View All Promotions &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- BRAND TRUST STRIP -->
-<div class="brand-wall-section reveal">
-  <div class="brand-wall-header">
-    <div class="section-label" style="margin-bottom:0;">Trusted Brands We Carry</div>
-    <a href="explore.html" class="brand-wall-link">View All Brands &rarr;</a>
-  </div>
-  <div class="brand-wall-grid">
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-blaze.png" alt="Blaze Grills"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-lynx.png" alt="Lynx Grills"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-napoleon.png" alt="Napoleon"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-biggreenegg.png" alt="Big Green Egg"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-coyote.png" alt="Coyote Grills"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-firemagic.png" alt="Fire Magic"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-memphis.png" alt="Memphis Grills"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-gozney.png" alt="Gozney"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-primo.png" alt="Primo"></a>
-    <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-alfresco.png" alt="Alfresco"></a>
   </div>
 </div>
 
-<!-- ABOUT PREVIEW -->
-<section style="padding: 5rem 4rem;">
-  <div class="section-label reveal">Our Story</div>
-  <h2 class="section-title reveal reveal-delay-1">Meet Michael<br><span>& Sandee</span></h2>
-  <div style="height:2.5rem;"></div>
-  <div class="about-preview reveal reveal-delay-2">
-    <div class="about-preview-img">
-      <img src="assets/michael-sandee.jpg" alt="Michael and Sandee Densmore, owners of Outdoor Grill Sales">
-      <div class="about-preview-badge">Est. 2017 &nbsp;|&nbsp; Weatherford, TX</div>
-    </div>
-    <div class="about-preview-content">
-      <div class="relocating-badge">Now at 111 Sunray Ct</div>
-      <blockquote>
-        "What started as a side job became our calling. We built Outdoor Grill Sales on one belief: take care of the customer first, every single time."
-      </blockquote>
-      <p>
-        Michael and Sandee Densmore opened Outdoor Grill Sales in Weatherford, TX in 2017. What began as a side hustle fueled by a passion for great barbecue grew into a full-time family business. Today they carry premium grill brands, handle on-site repairs, and build and outfit complete outdoor kitchens.
-      </p>
-      <p>
-        When you buy a grill from Outdoor Grill Sales, you are not just buying a product. You are getting Michael and Sandee in your corner. And when something needs hands-on work, Michael comes to you.
-      </p>
-      <a href="about.html" class="btn-ghost">Read the Full Story</a>
-    </div>
-  </div>
-</section>
-
-<!-- GOOGLE REVIEWS CAROUSEL -->
-<section class="reviews-section">
-  <div class="reviews-header reveal">
-    <div>
-      <div class="section-label">Customer Reviews</div>
-      <h2 class="section-title">What Customers<br><span>Are Saying</span></h2>
-    </div>
-    <div class="reviews-score">
-      <div class="reviews-big-num">4.7</div>
-      <div>
-        <div class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviews-count">61 Google Reviews</div>
-        <a href="https://www.google.com/maps/place/Outdoor+Grill+Sales" target="_blank" rel="noopener" class="btn-ghost" style="margin-top:0.8rem; padding:0.33rem 0.65rem; font-size:0.7rem;">View All Reviews</a>
+<!-- FRAME: CURRENT DEALS CALLOUT -->
+<div class="frame-wrap tight">
+  <div class="frame flush reveal">
+    <div class="deals-callout">
+      <div class="deals-callout-content">
+        <div class="section-label">Manufacturer Promotions</div>
+        <h2 class="deals-callout-title">4 Active Promotions<br><span>Running Now</span></h2>
+        <p class="deals-callout-sub">Save on Lynx, Blaze, TrueFlame, and Renaissance. Lynx is paying up to $1,500 cash back, plus manufacturer-direct dealer pricing on grills, smokers, packages, and outdoor kitchen components, available through the showroom.</p>
+        <div class="deals-callout-brands">
+          <span class="deals-callout-brand-label">Brands on sale:</span>
+          <img src="assets/brand-lynx.png" alt="Lynx" class="deals-callout-brand-logo" width="90" height="24" loading="lazy">
+          <img src="assets/brand-blaze.png" alt="Blaze" class="deals-callout-brand-logo" width="90" height="24" loading="lazy">
+          <img src="assets/brand-trueflame.png" alt="TrueFlame" class="deals-callout-brand-logo" width="90" height="24" loading="lazy">
+          <img src="assets/brand-renaissance.png" alt="Renaissance Cooking Systems" class="deals-callout-brand-logo" width="90" height="24" loading="lazy">
+        </div>
+      </div>
+      <div class="deals-callout-actions">
+        <span class="deals-callout-count">4 Active</span>
+        <a href="promotions.html" class="btn-primary">View All Promotions &rarr;</a>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="reviews-carousel-wrap reveal">
-    <div class="reviews-carousel-track" id="reviews-track">
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"Hands down the best grill shop in the area. Michael knows his stuff and helped me pick the perfect grill for my setup. Could not be happier with my Blaze. Will be back for the outdoor kitchen next."</blockquote>
-        <div class="review-author">
-          <div class="review-avatar">JT</div>
-          <div>
-            <div class="review-name">Jason T.</div>
-            <div class="review-platform">Google Review</div>
-          </div>
-        </div>
+<!-- FRAME: BRAND TRUST STRIP -->
+<div class="frame-wrap tight">
+  <div class="frame reveal">
+    <div class="brand-wall-section">
+      <div class="brand-wall-header">
+        <div class="section-label" style="margin-bottom:0;">Trusted Brands We Carry</div>
+        <a href="explore.html" class="brand-wall-link">View All Brands &rarr;</a>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"They repaired my grill the same week I called. Most places wanted to order parts and wait weeks. Michael had it fixed and running better than new. Highly recommend for anyone in the area."</blockquote>
-        <div class="review-author">
-          <div class="review-avatar">LM</div>
-          <div>
-            <div class="review-name">Lisa M.</div>
-            <div class="review-platform">Google Review</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"Great selection and even better service. I came in not knowing what I wanted and left with an amazing outdoor kitchen setup. Michael walked me through everything. Worth every single penny."</blockquote>
-        <div class="review-author">
-          <div class="review-avatar">RB</div>
-          <div>
-            <div class="review-name">Randy B.</div>
-            <div class="review-platform">Google Review</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"Michael is incredibly knowledgeable and genuinely cares about finding the right fit for your budget and lifestyle. No pressure at all. I drove 45 minutes to get here and it was worth every mile."</blockquote>
-        <div class="review-author">
-          <div class="review-avatar">CW</div>
-          <div>
-            <div class="review-name">Chad W.</div>
-            <div class="review-platform">Google Review</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"Best local grill shop in Parker County by a long shot. Friendly, honest, and they actually stand behind what they sell. I have sent three of my neighbors here and they all left happy."</blockquote>
-        <div class="review-author">
-          <div class="review-avatar">DH</div>
-          <div>
-            <div class="review-name">David H.</div>
-            <div class="review-platform">Google Review</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="reviews-carousel-controls">
-      <div class="reviews-carousel-dots">
-        <button class="reviews-carousel-dot active"></button>
-        <button class="reviews-carousel-dot"></button>
-        <button class="reviews-carousel-dot"></button>
-        <button class="reviews-carousel-dot"></button>
-        <button class="reviews-carousel-dot"></button>
-      </div>
-      <div class="reviews-carousel-btns">
-        <button class="reviews-carousel-btn" id="reviews-prev">&#8592;</button>
-        <button class="reviews-carousel-btn" id="reviews-next">&#8594;</button>
+      <div class="brand-wall-grid">
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-blaze.png" alt="Blaze Grills" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-lynx.png" alt="Lynx Grills" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-napoleon.png" alt="Napoleon" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-biggreenegg.png" alt="Big Green Egg" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-coyote.png" alt="Coyote Grills" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-firemagic.png" alt="Fire Magic" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-memphis.png" alt="Memphis Grills" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-gozney.png" alt="Gozney" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-primo.png" alt="Primo" width="120" height="28" loading="lazy"></a>
+        <a href="explore.html" class="brand-wall-tile"><img src="assets/brand-alfresco.png" alt="Alfresco" width="120" height="28" loading="lazy"></a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="cta-band-content">
-    <h2>Ready to Upgrade<br><span style="color:var(--ember);">Your Backyard?</span></h2>
-    <p>Come visit us in Weatherford or give Michael a call. We will find the right grill for you.</p>
-    <div class="cta-band-actions">
-      <a href="contact.html" class="btn-primary">Book a Visit</a>
-      <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+<!-- FRAME: FEATURED GALLERY CAROUSEL -->
+<div class="frame-wrap tight">
+  <div class="frame reveal">
+    <div class="section-label">Recent Work</div>
+    <h2 class="section-title" style="margin-bottom:1.6rem;">From the<br><span>Backyard</span></h2>
+
+    <div class="gallery-carousel">
+      <div class="gallery-stage" id="gallery-stage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured project gallery">
+        <div class="gallery-slide"><img src="assets/gallery-01.jpg" alt="Custom outdoor kitchen with built-in grill in Weatherford, Texas" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-02.jpg" alt="Built-in gas grill installed in a stone outdoor kitchen island" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-03.jpg" alt="Outdoor kitchen with storage drawers and access doors" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-04.jpg" alt="Premium stainless steel grill on a covered patio" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-05.jpg" alt="Pellet smoker set up for a low and slow cook" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-06.jpg" alt="Outdoor kitchen with side burner and refrigeration" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-07.jpg" alt="Ceramic kamado grill in a finished backyard setup" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-08.jpg" alt="Backyard pizza oven on a stone counter" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-09.jpg" alt="Griddle and grill combination in an outdoor kitchen build" width="1600" height="1000" loading="lazy"></div>
+        <div class="gallery-slide"><img src="assets/gallery-10.jpg" alt="Completed outdoor kitchen with seating and overhead heating" width="1600" height="1000" loading="lazy"></div>
+      </div>
+
+      <div class="gallery-caption" id="gallery-caption"></div>
+
+      <div class="gallery-controls">
+        <div class="gallery-dots" id="gallery-dots"></div>
+        <div class="gallery-btns">
+          <button class="gallery-btn" id="gallery-prev" type="button" aria-label="Previous image">&#8592;</button>
+          <button class="gallery-btn" id="gallery-next" type="button" aria-label="Next image">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAME: ABOUT PREVIEW -->
+<div class="frame-wrap tight">
+  <div class="frame reveal">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title" style="margin-bottom:1.6rem;">Meet Michael<br><span>&amp; Sandee</span></h2>
+    <div class="about-preview">
+      <div class="about-preview-img">
+        <img src="assets/michael-sandee.jpg" alt="Michael and Sandee Densmore, owners of Outdoor Grill Sales" width="800" height="960" loading="lazy">
+        <div class="about-preview-badge">Est. 2017 &nbsp;|&nbsp; Weatherford, TX</div>
+      </div>
+      <div class="about-preview-content">
+        <div class="relocating-badge">Now at 111 Sunray Ct</div>
+        <blockquote>
+          "What started as a side job became our calling. We built Outdoor Grill Sales on one belief: take care of the customer first, every single time."
+        </blockquote>
+        <p>
+          Michael and Sandee Densmore opened Outdoor Grill Sales in Weatherford, TX in 2017. What began as a side hustle fueled by a passion for great barbecue grew into a full-time family business. Today they carry premium grill brands, handle on-site repairs, and build and outfit complete outdoor kitchens.
+        </p>
+        <p>
+          When you buy a grill from Outdoor Grill Sales, you are not just buying a product. You are getting Michael and Sandee in your corner. And when something needs hands-on work, Michael comes to you.
+        </p>
+        <a href="about.html" class="btn-ghost">Read the Full Story</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAME: GOOGLE REVIEWS CAROUSEL -->
+<div class="frame-wrap tight">
+  <div class="frame reveal">
+    <div class="reviews-section">
+      <div class="reviews-header">
+        <div>
+          <div class="section-label">Customer Reviews</div>
+          <h2 class="section-title" style="margin-bottom:0;">What Customers<br><span>Are Saying</span></h2>
+        </div>
+        <div class="reviews-score">
+          <div class="reviews-big-num">4.7</div>
+          <div>
+            <div class="reviews-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="reviews-count">Rated 4.7 out of 5 from 61 Google reviews</div>
+            <a href="https://www.google.com/maps/place/Outdoor+Grill+Sales" target="_blank" rel="noopener" class="btn-ghost" style="margin-top:0.8rem; padding:0.4rem 0.8rem; font-size:0.7rem;">View All Reviews</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-carousel-wrap">
+        <div class="reviews-carousel-track" id="reviews-track">
+
+          <div class="review-card">
+            <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Hands down the best grill shop in the area. Michael knows his stuff and helped me pick the perfect grill for my setup. Could not be happier with my Blaze. Will be back for the outdoor kitchen next."</blockquote>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">JT</div>
+              <div>
+                <div class="review-name">Jason T.</div>
+                <div class="review-platform">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"They repaired my grill the same week I called. Most places wanted to order parts and wait weeks. Michael had it fixed and running better than new. Highly recommend for anyone in the area."</blockquote>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">LM</div>
+              <div>
+                <div class="review-name">Lisa M.</div>
+                <div class="review-platform">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Great selection and even better service. I came in not knowing what I wanted and left with an amazing outdoor kitchen setup. Michael walked me through everything. Worth every single penny."</blockquote>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">RB</div>
+              <div>
+                <div class="review-name">Randy B.</div>
+                <div class="review-platform">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Michael is incredibly knowledgeable and genuinely cares about finding the right fit for your budget and lifestyle. No pressure at all. I drove 45 minutes to get here and it was worth every mile."</blockquote>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">CW</div>
+              <div>
+                <div class="review-name">Chad W.</div>
+                <div class="review-platform">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Best local grill shop in Parker County by a long shot. Friendly, honest, and they actually stand behind what they sell. I have sent three of my neighbors here and they all left happy."</blockquote>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">DH</div>
+              <div>
+                <div class="review-name">David H.</div>
+                <div class="review-platform">Google Review</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="reviews-carousel-controls">
+          <div class="reviews-carousel-dots">
+            <button class="reviews-carousel-dot active" type="button" aria-label="Show review 1 of 5"></button>
+            <button class="reviews-carousel-dot" type="button" aria-label="Show review 2 of 5"></button>
+            <button class="reviews-carousel-dot" type="button" aria-label="Show review 3 of 5"></button>
+            <button class="reviews-carousel-dot" type="button" aria-label="Show review 4 of 5"></button>
+            <button class="reviews-carousel-dot" type="button" aria-label="Show review 5 of 5"></button>
+          </div>
+          <div class="reviews-carousel-btns">
+            <button class="reviews-carousel-btn" id="reviews-prev" type="button" aria-label="Previous review">&#8592;</button>
+            <button class="reviews-carousel-btn" id="reviews-next" type="button" aria-label="Next review">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAME: CTA BAND (contained, no longer full-bleed) -->
+<div class="frame-wrap">
+  <div class="cta-band reveal">
+    <div class="cta-band-content">
+      <h2>Ready to Upgrade<br><span style="color:var(--ember-light);">Your Backyard?</span></h2>
+      <p>Come visit us in Weatherford or give Michael a call. We will find the right grill for you.</p>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn-primary">Book a Visit</a>
+        <a href="tel:8175506038" class="btn-ghost">Call 817-550-6038</a>
+      </div>
     </div>
   </div>
 </div>
@@ -420,11 +478,11 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="assets/logo.png" alt="Outdoor Grill Sales">
+      <img src="assets/logo.png" alt="Outdoor Grill Sales" width="200" height="200" loading="lazy">
       <p>Premium grills, outdoor kitchens, and expert service in Weatherford, Texas. Family-owned since 2017.</p>
       <div class="footer-social">
-        <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" title="Facebook">f</a>
-        <a href="https://www.instagram.com/outdoorgrillsales1" target="_blank" rel="noopener" title="Instagram">in</a>
+        <a href="https://www.facebook.com/outdoorgrillsales" target="_blank" rel="noopener" aria-label="Outdoor Grill Sales on Facebook">f</a>
+        <a href="https://www.instagram.com/outdoorgrillsales1" target="_blank" rel="noopener" aria-label="Outdoor Grill Sales on Instagram">in</a>
       </div>
     </div>
     <div class="footer-col">
@@ -483,7 +541,7 @@
 <!-- BACK TO TOP -->
 <button id="back-top" aria-label="Back to top">&#8593;</button>
 
-<script src="nav.js"></script>
-<script src="script.js"></script>
+<script src="nav.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
