@@ -2277,9 +2277,14 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
   .hero-bg {
     display: block;
     background-size: contain;
-    background-position: center top;
     background-repeat: no-repeat;
     background-color: #241E1A;
+    /* The .hero box starts at document y=0, underneath the fixed banner and
+       nav. Anchoring the photo to 'top' therefore hid its upper edge behind
+       the header. Offsetting by banner height + the 64px mobile nav locks the
+       top of the image to the bottom of the nav bar, matching every other
+       page hero on the site. */
+    background-position: center calc(var(--banner-h, 96px) + 64px);
   }
   /* Gradient runs to solid at 80% so the bottom edge of the photo blends
      into the dark fill instead of showing a hard seam. */
@@ -2292,6 +2297,30 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
       #241E1A 80%
     );
   }
+  .hero-title { margin-bottom: 1.1rem; }
+  .hero-sub { margin-bottom: 1.5rem; font-size: 1.08rem; line-height: 1.6; }
+
+  /* Two buttons side by side instead of stacked. Saves a full button height
+     plus a gap, which is most of the dead space under the photo. They share
+     the row evenly and wrap their own label to a second line if a name is
+     too long, rather than pushing each other out of the row. */
+  .hero-actions {
+    gap: 0.6rem;
+    margin-bottom: 1.9rem;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 0.78rem 0.7rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+  }
+
   .hero-stats { flex-wrap: wrap; width: 100%; }
   .hero-stat { flex: 1; min-width: 100px; padding: 0.9rem 0.8rem; }
   .hero-stat-num { font-size: 1.5rem; }
