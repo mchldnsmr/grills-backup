@@ -2232,6 +2232,11 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
   .nav-hamburger { display: flex; grid-column: 3; justify-self: end; }
   .nav-drawer { display: flex; }
   .page-top { padding-top: 64px; }
+  /* Nav is 64px tall on mobile, so the banner-aware offset has to use 64
+     too. It previously inherited the desktop 72px and left an 8px strip of
+     background showing between the nav and the top of every page hero. */
+  body.has-banner .page-top { padding-top: calc(64px + var(--banner-h, 96px)); }
+  .page-hero { margin-top: -1px; }
 
   /* Drawer sized for 7 nav items + CTA + contact block */
   .nav-drawer {
@@ -2265,13 +2270,26 @@ footer { background: var(--frame); border-top: 3px solid var(--ember); }
     justify-content: flex-start !important;
   }
   body.has-banner .hero { padding-top: calc(7rem + var(--banner-h, 96px)) !important; }
-  .hero-bg { display: block; }
+  /* A tall narrow hero box with background-size:cover crops the sides off a
+     landscape photo, which is why only the middle of the shot was showing.
+     'contain' fits the full WIDTH of the image across the top instead, and
+     the dark fill below it carries the rest of the hero. */
+  .hero-bg {
+    display: block;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #241E1A;
+  }
+  /* Gradient runs to solid at 80% so the bottom edge of the photo blends
+     into the dark fill instead of showing a hard seam. */
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(26,23,21,0.72) 0%,
-      rgba(26,23,21,0.58) 50%,
-      rgba(26,23,21,0.42) 100%
+      rgba(26,23,21,0.62) 0%,
+      rgba(26,23,21,0.70) 32%,
+      rgba(26,23,21,0.92) 58%,
+      #241E1A 80%
     );
   }
   .hero-stats { flex-wrap: wrap; width: 100%; }
